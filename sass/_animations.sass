@@ -1,0 +1,18 @@
+@-webkit-keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+=delay($seconds)
+  -webkit-animation-delay: $seconds
+  animation-delay: $seconds
+
+=fade($time)
+  -webkit-animation: fadeIn $time linear forwards
+  animation: fadeIn $time linear forwards
