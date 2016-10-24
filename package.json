@@ -1,7 +1,7 @@
 {
-  "name": "oslaw",
+  "name": "oslo",
   "version": "0.0.1",
-  "description": "Oslaw",
+  "description": "oslo",
   "main": "",
   "scripts": {
     "sass": "sass --watch sass:assets/css",
