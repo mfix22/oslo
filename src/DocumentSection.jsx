@@ -3,6 +3,9 @@ import LicenseEdit from './LicenseEdit'
 import ContentEditable from './ContentEditable'
 import FilterCard from './FilterCard'
 
+
+import MIT_License from 'to-string!../assets/documents/MIT_LICENSE.md'
+
 const DocumentSection = ({header, subHeader, endContent}) => {
   return (
     <section className="document-section">

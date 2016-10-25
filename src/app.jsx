@@ -3,11 +3,15 @@ injectTapEventPlugin();
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import LicenseEdit from './LicenseEdit'
-import MIT_License from 'to-string!../assets/documents/MIT_LICENSE.md'
 
+import LicenseEdit from './LicenseEdit'
 import DocumentSection from './DocumentSection'
+import reducer from './reducer'
+
+const store = createStore(reducer)
 
 const App = () => (
   <MuiThemeProvider>
@@ -17,20 +21,21 @@ const App = () => (
       endContent={
         <div>
           <div className="file-area">
-            <LicenseEdit
-              license={MIT_License}
-            />
+            <LicenseEdit/>
           </div>
           <a href="https://opensource.org/licenses/alphabetical">
-             More licenses available at OpenSource.org
+            More licenses available at OpenSource.org
           </a>
         </div>
       }
-    />
+      />
   </MuiThemeProvider>
 );
 
+
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('app')
 );

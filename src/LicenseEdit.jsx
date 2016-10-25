@@ -1,23 +1,23 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
 import FileCreator from './FileCreator'
 import ContentEditable from './ContentEditable'
 
-class LicenseEdit extends React.Component {
-  render() {
-    return (
-      <div>
-        <pre>
-          {<ContentEditable text={this.props.license}/>}
-        </pre>
-        <FileCreator text={this.props.license}/>
-      </div>
-    )
-  }
-  
-  onChange(event) {
-    this.setState({text : event.target.value});
-    console.log(event.target.value);
+const LicenseEdit = ({license}) => {
+  return (
+    <div>
+      <pre>
+          {<ContentEditable text={license}/>}
+      </pre>
+      <FileCreator text={license}/>
+    </div>
+  )
+}
+
+const mapStateToProps = (state) => {
+  return {
+    license : state.text,
   }
 }
 
-export default LicenseEdit
+export default connect(mapStateToProps)(LicenseEdit)

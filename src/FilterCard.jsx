@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
 
-const FilterCard = ({filter, title, length}) => {
+const FilterCard = ({filter, title, length, onClick}) => {
   return (
-    <div className={`col col--${length || 1}-of-3`}>
+    <div onClick={onClick} className={`col col--${length || 1}-of-3`}>
       <div className="document">
         <h5>{title}</h5>
       </div>
@@ -10,4 +11,19 @@ const FilterCard = ({filter, title, length}) => {
   )
 }
 
-export default FilterCard
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onClick : () => {
+      dispatch({
+        type : 'FILTER_LICENSE',
+        filter : ownProps.filter
+      })
+    }
+  }
+}
+
+FilterCard.propTypes = {
+  onClick: PropTypes.func.isRequired,
+}
+
+export default connect(null, mapDispatchToProps)(FilterCard)

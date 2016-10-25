@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
 import Toggle from 'material-ui/Toggle';
 import RaisedButton  from 'material-ui/RaisedButton'
 import FileSaver from 'file-saver'
+
 const { saveAs } = FileSaver
 
 const button_style = {
@@ -16,17 +18,11 @@ const toggle_style = {
   display: 'inline-block'
 }
 
-
-const FileCreator = (text) => {
-  let toggled = true;
+let FileCreator = ({text, toggled, onToggle}) => {
 
   const download = () => {
     const blob = new Blob([text.text], {type: "text/plain;charset=utf-8"});
     saveAs(blob, `LICENSE${(toggled) ? '.md' : '.txt'}`);
-  }
-
-  const onToggle = () => {
-    toggled = !toggled;
   }
 
   return (
@@ -50,4 +46,26 @@ const FileCreator = (text) => {
   )
 }
 
-export default FileCreator
+const mapStateToProps = (state) => {
+  return {
+    text : state.text,
+    toggled: state.file_type_md,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onToggle : () => {
+      dispatch({
+        type : 'TOGGLE_USE_MD'
+      })
+    }
+  }
+}
+
+FileCreator.propTypes = {
+  onToggle: PropTypes.func.isRequired,
+  toggled: PropTypes.bool.isRequired,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FileCreator)
