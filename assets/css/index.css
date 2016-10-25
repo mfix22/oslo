@@ -7,12 +7,16 @@ body {
   height: 100vh;
   min-height: 100%; }
 
-p {
-  color: white; }
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word; }
 
 a, a:visited, a:hover, a:focus {
   text-decoration: none;
-  color: currentColor; }
+  color: #5555ff; }
 
 ul {
   list-style: none;
@@ -225,6 +229,11 @@ h4 {
 .col--am {
   vertical-align: middle; }
 
+.page-title {
+  font-size: 84px;
+  text-transform: lowercase;
+  margin-bottom: 30px; }
+
 .wrapper {
   width: 720px;
   text-align: center;
@@ -238,5 +247,13 @@ h4 {
       cursor: pointer;
       background: rgba(170, 170, 170, 0.4);
       border-radius: 4px; }
+
+.file-area {
+  padding: 20px 100px; }
+  .file-area pre {
+    text-align: left; }
+
+.contenteditable {
+  color: #5555ff; }
 
 /*# sourceMappingURL=index.css.map */

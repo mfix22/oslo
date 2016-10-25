@@ -1,9 +1,9 @@
 extends ./pug/_main_template.pug
 block head
-  title oslaw | Open Sourcing Law Documents
+  title oslo | Open Sourcing Law Documents
 
-  h1.page-title Oslow
   .wrapper
+    h1.page-title Oslo
     section.document-section
       h2 Licenses
       h4 Generate a custom open-source license for your project
@@ -17,6 +17,8 @@ block head
         .col.col--1-of-3
           .document.license
             h5 GNU (v3.0)
+        .file-area
+          #app
         a(href="https://opensource.org/licenses/alphabetical") More licenses available at OpenSource.org
         
     section.document-section
