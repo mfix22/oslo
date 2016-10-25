@@ -92,12 +92,12 @@
 	        title: 'MIT'
 	      }),
 	      _react2.default.createElement(_FilterCard2.default, {
-	        filter: 'MIT',
-	        title: 'MIT'
+	        filter: 'ISC',
+	        title: 'ISC'
 	      }),
 	      _react2.default.createElement(_FilterCard2.default, {
-	        filter: 'MIT',
-	        title: 'MIT'
+	        filter: 'GNU',
+	        title: 'GNU (v3.0)'
 	      }),
 	      _react2.default.createElement(
 	        'div',
@@ -33771,10 +33771,10 @@
 	
 	  return _react2.default.createElement(
 	    "div",
-	    { className: ".col.col--1-of-3" },
+	    { className: "col col--1-of-3" },
 	    _react2.default.createElement(
 	      "div",
-	      { className: ".document" },
+	      { className: "document" },
 	      _react2.default.createElement(
 	        "h5",
 	        null,

@@ -10,7 +10,6 @@ import FilterCard from './FilterCard'
 
 const MIT_License = require('to-string!../assets/documents/MIT_LICENSE.md')
 
-
 const App = () => (
   <MuiThemeProvider>
     <div className="grid">
@@ -19,20 +18,20 @@ const App = () => (
         title="MIT"
       />
       <FilterCard
-        filter="MIT"
-        title="MIT"
+        filter="ISC"
+        title="ISC"
       />
       <FilterCard
-        filter="MIT"
-        title="MIT"
+        filter="GNU"
+        title="GNU (v3.0)"
       />
       <div className="file-area">
         <LicenseEdit
           text={<ContentEditable text={MIT_License}/>}
-          />
+        />
       </div>
       <a href="https://opensource.org/licenses/alphabetical">
-        More licenses available at OpenSource.org
+         More licenses available at OpenSource.org
       </a>
     </div>
   </MuiThemeProvider>
