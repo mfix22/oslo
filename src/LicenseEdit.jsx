@@ -5,7 +5,7 @@ import ContentEditable from './ContentEditable'
 
 const LicenseEdit = ({license}) => {
   return (
-    <div>
+    <div className="file-area">
       <pre>
           {<ContentEditable text={license}/>}
       </pre>

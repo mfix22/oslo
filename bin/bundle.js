@@ -94,11 +94,7 @@
 	      endContent: _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'file-area' },
-	          _react2.default.createElement(_LicenseEdit2.default, null)
-	        ),
+	        _react2.default.createElement(_LicenseEdit2.default, null),
 	        _react2.default.createElement(
 	          'a',
 	          { href: 'https://opensource.org/licenses/alphabetical' },
@@ -30810,7 +30806,7 @@
 	
 	  return _react2.default.createElement(
 	    'div',
-	    null,
+	    { className: 'file-area' },
 	    _react2.default.createElement(
 	      'pre',
 	      null,
@@ -30883,6 +30879,9 @@
 	    var blob = new Blob([text.text], { type: "text/plain;charset=utf-8" });
 	    saveAs(blob, 'LICENSE' + (toggled ? '.md' : '.txt'));
 	  };
+	  if (text === '') {
+	    return _react2.default.createElement('div', null);
+	  }
 	
 	  return _react2.default.createElement(
 	    'div',
@@ -35593,7 +35592,7 @@
 /* 398 */
 /***/ function(module, exports) {
 
-	module.exports = "possible use to the public, the best way to achieve this is to make it\r\nfree software which everyone can redistribute and change under these terms.\r\n\r\n  To do so, attach the following notices to the program.  It is safest\r\nto attach them to the start of each source file to most effectively\r\nstate the exclusion of warranty; and each file should have at least\r\nthe \"copyright\" line and a pointer to where the full notice is found.\r\n\r\n    {{description}}\r\n    Copyright (C) {{year}}  {{name}}\r\n\r\n    This program is free software: you can redistribute it and/or modify\r\n    it under the terms of the GNU General Public License as published by\r\n    the Free Software Foundation, either version 3 of the License, or\r\n    (at your option) any later version.\r\n\r\n    This program is distributed in the hope that it will be useful,\r\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\r\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\r\n    GNU General Public License for more details.\r\n\r\n    You should have received a copy of the GNU General Public License\r\n    along with this program.  If not, see <http://www.gnu.org/licenses/>.\r\n\r\nAlso add information on how to contact you by electronic and paper mail.\r\n\r\n  If the program does terminal interaction, make it output a short\r\nnotice like this when it starts in an interactive mode:\r\n\r\n    {{project}}  Copyright (C) {{year}}  {{name}}\r\n    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.\r\n    This is free software, and you are welcome to redistribute it\r\n    under certain conditions; type `show c' for details.\r\n\r\nThe hypothetical commands `show w' and `show c' should show the appropriate\r\nparts of the General Public License.  Of course, your program's commands\r\nmight be different; for a GUI interface, you would use an \"about box\".\r\n\r\n  You should also get your employer (if you work as a programmer) or school,\r\nif any, to sign a \"copyright disclaimer\" for the program, if necessary.\r\nFor more information on this, and how to apply and follow the GNU GPL, see\r\n<http://www.gnu.org/licenses/>.\r\n\r\n  The GNU General Public License does not permit incorporating your program\r\ninto proprietary programs.  If your program is a subroutine library, you\r\nmay consider it more useful to permit linking proprietary applications with\r\nthe library.  If this is what you want to do, use the GNU Lesser General\r\nPublic License instead of this License.  But first, please read\r\n<http://www.gnu.org/philosophy/why-not-lgpl.html>.\r\n"
+	module.exports = "possible use to the public, the best way to achieve this is to make it\r\nfree software which everyone can redistribute and change under these terms.\r\n\r\n  To do so, attach the following notices to the program.  It is safest\r\nto attach them to the start of each source file to most effectively\r\nstate the exclusion of warranty; and each file should have at least\r\nthe \"copyright\" line and a pointer to where the full notice is found.\r\n\r\n    {{description}}\r\n    Copyright (C) {{year}}  {{name}}\r\n\r\n    This program is free software: you can redistribute it and/or modify\r\n    it under the terms of the GNU General Public License as published by\r\n    the Free Software Foundation, either version 3 of the License, or\r\n    (at your option) any later version.\r\n\r\n    This program is distributed in the hope that it will be useful,\r\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\r\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\r\n    GNU General Public License for more details.\r\n\r\n    You should have received a copy of the GNU General Public License\r\n    along with this program.  If not, see <http://www.gnu.org/licenses/>.\r\n\r\nAlso add information on how to contact you by electronic and paper mail.\r\n\r\n  If the program does terminal interaction, make it output a short\r\nnotice like this when it starts in an interactive mode:\r\n\r\n    {{project}}  Copyright (C) {{year}}  {{name}}\r\n    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w`.\r\n    This is free software, and you are welcome to redistribute it\r\n    under certain conditions; type `show c` for details.\r\n\r\nThe hypothetical commands `show w` and `show c` should show the appropriate\r\nparts of the General Public License.  Of course, your program's commands\r\nmight be different; for a GUI interface, you would use an \"about box\".\r\n\r\n  You should also get your employer (if you work as a programmer) or school,\r\nif any, to sign a \"copyright disclaimer\" for the program, if necessary.\r\nFor more information on this, and how to apply and follow the GNU GPL, see\r\n<http://www.gnu.org/licenses/>.\r\n\r\n  The GNU General Public License does not permit incorporating your program\r\ninto proprietary programs.  If your program is a subroutine library, you\r\nmay consider it more useful to permit linking proprietary applications with\r\nthe library.  If this is what you want to do, use the GNU Lesser General\r\nPublic License instead of this License.  But first, please read\r\n<http://www.gnu.org/philosophy/why-not-lgpl.html>.\r\n"
 
 /***/ }
 /******/ ]);

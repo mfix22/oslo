@@ -20,9 +20,7 @@ const App = () => (
       subHeader="Generate a custom open-source license for your project"
       endContent={
         <div>
-          <div className="file-area">
-            <LicenseEdit/>
-          </div>
+          <LicenseEdit/>
           <a href="https://opensource.org/licenses/alphabetical">
             More licenses available at OpenSource.org
           </a>
