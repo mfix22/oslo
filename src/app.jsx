@@ -5,35 +5,28 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import LicenseEdit from './LicenseEdit'
-import ContentEditable from './ContentEditable'
-import FilterCard from './FilterCard'
+import MIT_License from 'to-string!../assets/documents/MIT_LICENSE.md'
 
-const MIT_License = require('to-string!../assets/documents/MIT_LICENSE.md')
+import DocumentSection from './DocumentSection'
 
 const App = () => (
   <MuiThemeProvider>
-    <div className="grid">
-      <FilterCard
-        filter="MIT"
-        title="MIT"
-      />
-      <FilterCard
-        filter="ISC"
-        title="ISC"
-      />
-      <FilterCard
-        filter="GNU"
-        title="GNU (v3.0)"
-      />
-      <div className="file-area">
-        <LicenseEdit
-          text={<ContentEditable text={MIT_License}/>}
-        />
-      </div>
-      <a href="https://opensource.org/licenses/alphabetical">
-         More licenses available at OpenSource.org
-      </a>
-    </div>
+    <DocumentSection
+      header="Licences"
+      subHeader="Generate a custom open-source license for your project"
+      endContent={
+        <div>
+          <div className="file-area">
+            <LicenseEdit
+              license={MIT_License}
+            />
+          </div>
+          <a href="https://opensource.org/licenses/alphabetical">
+             More licenses available at OpenSource.org
+          </a>
+        </div>
+      }
+    />
   </MuiThemeProvider>
 );
 

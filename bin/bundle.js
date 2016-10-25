@@ -66,52 +66,42 @@
 	
 	var _LicenseEdit2 = _interopRequireDefault(_LicenseEdit);
 	
-	var _ContentEditable = __webpack_require__(366);
+	var _MIT_LICENSE = __webpack_require__(367);
 	
-	var _ContentEditable2 = _interopRequireDefault(_ContentEditable);
+	var _MIT_LICENSE2 = _interopRequireDefault(_MIT_LICENSE);
 	
-	var _FilterCard = __webpack_require__(374);
+	var _DocumentSection = __webpack_require__(369);
 	
-	var _FilterCard2 = _interopRequireDefault(_FilterCard);
+	var _DocumentSection2 = _interopRequireDefault(_DocumentSection);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	(0, _reactTapEventPlugin2.default)();
 	
-	var MIT_License = __webpack_require__(372);
-	
 	var App = function App() {
 	  return _react2.default.createElement(
 	    _MuiThemeProvider2.default,
 	    null,
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'grid' },
-	      _react2.default.createElement(_FilterCard2.default, {
-	        filter: 'MIT',
-	        title: 'MIT'
-	      }),
-	      _react2.default.createElement(_FilterCard2.default, {
-	        filter: 'ISC',
-	        title: 'ISC'
-	      }),
-	      _react2.default.createElement(_FilterCard2.default, {
-	        filter: 'GNU',
-	        title: 'GNU (v3.0)'
-	      }),
-	      _react2.default.createElement(
+	    _react2.default.createElement(_DocumentSection2.default, {
+	      header: 'Licences',
+	      subHeader: 'Generate a custom open-source license for your project',
+	      endContent: _react2.default.createElement(
 	        'div',
-	        { className: 'file-area' },
-	        _react2.default.createElement(_LicenseEdit2.default, {
-	          text: _react2.default.createElement(_ContentEditable2.default, { text: MIT_License })
-	        })
-	      ),
-	      _react2.default.createElement(
-	        'a',
-	        { href: 'https://opensource.org/licenses/alphabetical' },
-	        'More licenses available at OpenSource.org'
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'file-area' },
+	          _react2.default.createElement(_LicenseEdit2.default, {
+	            license: _MIT_LICENSE2.default
+	          })
+	        ),
+	        _react2.default.createElement(
+	          'a',
+	          { href: 'https://opensource.org/licenses/alphabetical' },
+	          'More licenses available at OpenSource.org'
+	        )
 	      )
-	    )
+	    })
 	  );
 	};
 	
@@ -29209,6 +29199,8 @@
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(27);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -29217,21 +29209,51 @@
 	
 	var _FileCreator2 = _interopRequireDefault(_FileCreator);
 	
+	var _ContentEditable = __webpack_require__(366);
+	
+	var _ContentEditable2 = _interopRequireDefault(_ContentEditable);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var LicenseEdit = function LicenseEdit(_ref) {
-	  var text = _ref.text;
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    _react2.default.createElement(
-	      'pre',
-	      null,
-	      text
-	    ),
-	    _react2.default.createElement(_FileCreator2.default, null)
-	  );
-	};
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var LicenseEdit = function (_React$Component) {
+	  _inherits(LicenseEdit, _React$Component);
+	
+	  function LicenseEdit() {
+	    _classCallCheck(this, LicenseEdit);
+	
+	    return _possibleConstructorReturn(this, (LicenseEdit.__proto__ || Object.getPrototypeOf(LicenseEdit)).apply(this, arguments));
+	  }
+	
+	  _createClass(LicenseEdit, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'pre',
+	          null,
+	          _react2.default.createElement(_ContentEditable2.default, { text: this.props.license })
+	        ),
+	        _react2.default.createElement(_FileCreator2.default, { text: this.props.license })
+	      );
+	    }
+	  }, {
+	    key: 'onChange',
+	    value: function onChange(event) {
+	      this.setState({ text: event.target.value });
+	      console.log(event.target.value);
+	    }
+	  }]);
+	
+	  return LicenseEdit;
+	}(_react2.default.Component);
 	
 	exports.default = LicenseEdit;
 
@@ -29257,13 +29279,14 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
+	var _fileSaver = __webpack_require__(364);
+	
+	var _fileSaver2 = _interopRequireDefault(_fileSaver);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var FileSaver = __webpack_require__(364);
-	var saveAs = FileSaver.saveAs;
+	var saveAs = _fileSaver2.default.saveAs;
 	
-	// var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
-	// saveAs(blob, "hello world.txt");
 	
 	var button_style = {
 	  display: 'inline-block',
@@ -29278,30 +29301,34 @@
 	};
 	
 	var FileCreator = function FileCreator(text) {
+	  var toggled = true;
+	
+	  var download = function download() {
+	    var blob = new Blob([text.text], { type: "text/plain;charset=utf-8" });
+	    saveAs(blob, 'LICENSE' + (toggled ? '.md' : '.txt'));
+	  };
+	
+	  var onToggle = function onToggle() {
+	    toggled = !toggled;
+	  };
+	
 	  return _react2.default.createElement(
 	    'div',
 	    null,
 	    _react2.default.createElement(_RaisedButton2.default, {
 	      label: 'Download LICENSE File',
 	      primary: true,
-	      style: button_style
+	      style: button_style,
+	      onClick: download
 	    }),
 	    _react2.default.createElement(_Toggle2.default, {
 	      style: toggle_style,
-	      label: 'Use .md file extension:',
+	      label: 'Uses ' + (toggled ? '.md' : '.txt') + ' file extension:',
 	      defaultToggled: true,
-	      elementStyle: {
-	        margin: "0"
-	      },
-	      thumbStyle: {
-	        margin: "0"
-	      },
-	      trackStyle: {
-	        margin: "0"
-	      },
 	      iconStyle: {
 	        margin: "0"
-	      }
+	      },
+	      onToggle: onToggle
 	    })
 	  );
 	};
@@ -33725,16 +33752,11 @@
 	exports.default = ContentEditable;
 
 /***/ },
-/* 367 */,
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	        var result = __webpack_require__(373);
+	        var result = __webpack_require__(368);
 	
 	        if (typeof result === "string") {
 	            module.exports = result;
@@ -33744,13 +33766,81 @@
 	    
 
 /***/ },
-/* 373 */
+/* 368 */
 /***/ function(module, exports) {
 
 	module.exports = "MIT License\n\nCopyright (c) {{year}} {{name}}\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
 
 /***/ },
-/* 374 */
+/* 369 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(27);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _LicenseEdit = __webpack_require__(323);
+	
+	var _LicenseEdit2 = _interopRequireDefault(_LicenseEdit);
+	
+	var _ContentEditable = __webpack_require__(366);
+	
+	var _ContentEditable2 = _interopRequireDefault(_ContentEditable);
+	
+	var _FilterCard = __webpack_require__(370);
+	
+	var _FilterCard2 = _interopRequireDefault(_FilterCard);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var DocumentSection = function DocumentSection(_ref) {
+	  var header = _ref.header;
+	  var subHeader = _ref.subHeader;
+	  var endContent = _ref.endContent;
+	
+	  return _react2.default.createElement(
+	    'section',
+	    { className: 'document-section' },
+	    _react2.default.createElement(
+	      'h2',
+	      null,
+	      header
+	    ),
+	    _react2.default.createElement(
+	      'h4',
+	      null,
+	      subHeader
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'grid' },
+	      _react2.default.createElement(_FilterCard2.default, {
+	        filter: 'MIT',
+	        title: 'MIT'
+	      }),
+	      _react2.default.createElement(_FilterCard2.default, {
+	        filter: 'ISC',
+	        title: 'ISC'
+	      }),
+	      _react2.default.createElement(_FilterCard2.default, {
+	        filter: 'GNU',
+	        title: 'GNU (v3.0)'
+	      }),
+	      endContent
+	    )
+	  );
+	};
+	
+	exports.default = DocumentSection;
+
+/***/ },
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -33768,10 +33858,11 @@
 	var FilterCard = function FilterCard(_ref) {
 	  var filter = _ref.filter;
 	  var title = _ref.title;
+	  var length = _ref.length;
 	
 	  return _react2.default.createElement(
 	    "div",
-	    { className: "col col--1-of-3" },
+	    { className: "col col--" + (length || 1) + "-of-3" },
 	    _react2.default.createElement(
 	      "div",
 	      { className: "document" },
