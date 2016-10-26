@@ -1,4 +1,6 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const ExtractTextPlugin  = require('extract-text-webpack-plugin');
+
 module.exports = {
   entry: './src/app.jsx',
   output: {
@@ -6,7 +8,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css', '.scss']
+    extensions: ['', '.js', '.jsx', '.css', '.scss', '.sass']
   },
   module: {
     loaders: [
@@ -20,16 +22,13 @@ module.exports = {
         }
       },
       {
+        test: /\.sass$/,
+        loaders: ['style', 'css', 'sass']
+      },
+      {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
-      },
-      {
-        test: /\.css$/,
-        loaders: ["style", "css", "sass"]
-      },
-      {
-        test: /\.pug$/,
-        loader: "pug"
+        loader: ['style', 'css', 'sass'],
+        // loader: ExtractTextPlugin.extract('style', ['css','sass'])
       },
       {
         test: /\.md$/,
@@ -38,10 +37,11 @@ module.exports = {
     ]
   },
   devtool: 'source-map',
-  plugins: [
-    new webpack.ProvidePlugin({
-       $: "jquery",
-       jQuery: "jquery"
-   })
-  ]
+  // plugins: [
+  //   new ExtractTextPlugin('../assets/styles/[name].css'),
+  //   new webpack.ProvidePlugin({
+  //      $: "jquery",
+  //      jQuery: "jquery"
+  //  })
+  // ]
 };

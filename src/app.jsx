@@ -7,6 +7,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
+require('../sass/index.sass')
 import LicenseEdit from './LicenseEdit'
 import DocumentSection from './DocumentSection'
 import reducer from './reducer'
