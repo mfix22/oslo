@@ -19,7 +19,7 @@ const getTextFromFilter = (filter) => {
 const reducer = (state = initialState, action) => {
   console.log(state, action);
   switch (action.type) {
-    case 'FILTER_LICENSE':  
+    case 'FILTER_LICENSE':
       return Object.assign({}, state, {
         text : getTextFromFilter(action.filter),
       });
