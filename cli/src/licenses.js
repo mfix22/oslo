@@ -1,5 +1,5 @@
 const fs = require('fs')
-const DIR_NAME = 'assets/documents/'
+const DIR_NAME = '../assets/documents/'
 
 const getLicenses = () => {
   return fs.readdirSync(DIR_NAME).reduce((accum, fileName) => {

@@ -1,7 +1,9 @@
 const fs = require('fs')
-const licenses = require('./licences');
+const licenses = require('./licenses');
 
-const getLicense = file => licenses[file]
+const getLicense = (file) => {
+  return licenses[file.toLowerCase()]
+}
 
 const createFile = (file, otherArgs) => {
   fs.writeFile('LICENSE.md', getLicense(file), (err) => {
@@ -9,4 +11,4 @@ const createFile = (file, otherArgs) => {
   });
 }
 
-export default createFile;
+module.exports =  createFile;
