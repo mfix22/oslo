@@ -1,7 +1,7 @@
 {
   "name": "oslo",
   "version": "0.0.1",
-  "description": "oslo",
+  "description": "Create an Open Source license from the command line",
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch sass:assets/css",
