@@ -12,9 +12,8 @@ $ oslo <license_name>
 ```
 
 ## Example
-Entering
 ```bash
-$ oslo mit # capitalization insensative
+$ oslo mit  #capitalization insensative
 ```
 will create a file called `LICENSE.md` in the current working directory containing the MIT license.
 
