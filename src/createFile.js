@@ -9,11 +9,15 @@ const getLicense = (file) => {
 
 const createFile = (file, otherArgs) => {
   const template = handlebars.compile(getLicense(file))
-  const compiled = template({
+  const pkg = getPackage();
+  let data = pkg.oslo;
+  data = Object.assign({}, data, {
     year : new Date().getFullYear(),
-    name : getPackage().author
+    name : pkg.author,
+    description : pkg.description
   })
-  fs.writeFile('LICENSE.md', compiled, (err) => {
+  
+  fs.writeFile('LICENSE.md', template(data), (err) => {
     if (err) throw err;
   });
 }
