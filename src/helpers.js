@@ -1,7 +1,14 @@
 const { join } = require('path')
-const PACKAGE_PATH = join(__dirname + '/../package.json')
-const package = require(PACKAGE_PATH)
 
-const getPackage = () => package;
+const getPackage = () => {
+  try {
+    // look for package.json in cwd
+    const PACKAGE_PATH = join(process.cwd() + '/package.json')
+    const package = require(PACKAGE_PATH)
+    return package;
+  } catch (e) {
+    return {};
+  }
+}
 
 module.exports.getPackage = getPackage;
