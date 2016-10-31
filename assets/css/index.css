@@ -1,11 +1,11 @@
 @charset "UTF-8";
-@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
-
+@import url("https://fonts.googleapis.com/css?family=Bitter:400,400i,700");
 body {
   padding: 0px;
   margin: 0px;
   height: 100vh;
-  min-height: 100%; }
+  min-height: 100%;
+  font-family: "Bitter", serif; }
 
 pre {
   white-space: pre-wrap;
