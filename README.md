@@ -3,7 +3,7 @@ Tools for creating open source documents, and a hub for open source legal docume
 
 ## Installation
 ```bash
-$ npm install -g oslo
+$ npm install -g open-source-law
 ```
 
 ## Usage
