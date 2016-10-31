@@ -23,4 +23,5 @@ The following licenses are supported by the *oslo* command line interface:
 - `isc` - ISC
 - `gnu` - GNU General Public License (GPL-3.0)
 
+### Contributing (see [here](CONTRIBUTING.md))
 Please submit a pull request to contribute new licenses.
