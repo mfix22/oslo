@@ -12,6 +12,11 @@ const FilterCard = ({filter, title, length, onClick}) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+  if (!ownProps.filter) return {
+    onClick : () => {
+      window.location = ownProps.link;
+    }
+  }
   return {
     onClick : () => {
       dispatch({

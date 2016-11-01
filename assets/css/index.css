@@ -232,7 +232,11 @@ h4 {
 .page-title {
   font-size: 84px;
   text-transform: lowercase;
-  margin-bottom: 30px; }
+  margin-top: 20px;
+  margin-bottom: 5px; }
+
+.page-subTitle {
+  margin-bottom: 40px; }
 
 .wrapper {
   width: 720px;

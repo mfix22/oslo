@@ -24,10 +24,11 @@ let FileCreator = ({text, toggled, onToggle}) => {
     const blob = new Blob([text.text], {type: "text/plain;charset=utf-8"});
     saveAs(blob, `LICENSE${(toggled) ? '.md' : '.txt'}`);
   }
+  
   if (text === '') {
     return (<div></div>)
   }
-  
+
   return (
     <div>
       <RaisedButton

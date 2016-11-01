@@ -6,7 +6,7 @@ import FilterCard from './FilterCard'
 
 import MIT_License from 'to-string!../assets/documents/MIT_LICENSE.md'
 
-const DocumentSection = ({header, subHeader, endContent}) => {
+const DocumentSection = ({header, subHeader, endContent, cards}) => {
   return (
     <section className="document-section">
       <h2>
@@ -16,18 +16,7 @@ const DocumentSection = ({header, subHeader, endContent}) => {
         {subHeader}
       </h4>
       <div className="grid">
-        <FilterCard
-          filter="MIT"
-          title="MIT"
-        />
-        <FilterCard
-          filter="ISC"
-          title="ISC"
-        />
-        <FilterCard
-          filter="GNU"
-          title="GNU (v3.0)"
-        />
+        { cards.map((card, i) => (<FilterCard key={i} filter={card.filter} link={card.link} title={card.title} length={3 / cards.length}/>)) }
         {endContent}
       </div>
     </section>
