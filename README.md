@@ -17,9 +17,8 @@ $ oslo <license_name> [options]
 | `--type`       | `-t`           | `String`       | `--type=txt`   | `md`           |
 
 ## Example
-Entering
 ```bash
-$ oslo mit # capitalization insensative
+$ oslo mit  #capitalization insensative
 ```
 will create a file called `LICENSE.md` in the current working directory containing the MIT license.
 
@@ -29,4 +28,8 @@ The following licenses are supported by the *oslo* command line interface:
 - `isc` - ISC
 - `gnu` - GNU General Public License (GPL-3.0)
 
+### Contributing (see [here](CONTRIBUTING.md))
 Please submit a pull request to contribute new licenses.
+
+
+### [License](LICENSE.md)
