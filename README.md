@@ -8,8 +8,13 @@ $ npm install -g open-source-law
 
 ## Usage
 ```bash
-$ oslo <license_name>
+$ oslo <license_name> [options]
 ```
+
+#### Options
+| Name           |      Alias     |   Type         | Example        | Default        |
+| :------------- | :------------- | :------------- | :------------- | :------------- |
+| `--type`       | `-t`           | `String`       | `--type=txt`   | `md`           |
 
 ## Example
 Entering

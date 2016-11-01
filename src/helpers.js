@@ -11,4 +11,9 @@ const getPackage = () => {
   }
 }
 
+const optionsDefinitions = [
+  { name: 'type', alias: 't', type: String }
+];
+
 module.exports.getPackage = getPackage;
+module.exports.optionsDefinitions = optionsDefinitions;

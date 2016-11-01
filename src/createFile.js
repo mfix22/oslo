@@ -1,7 +1,9 @@
 const fs = require('fs')
 const handlebars = require('handlebars')
+const commandLineArgs = require('command-line-args')
+
 const licenses = require('./licenses');
-const { getPackage } = require('./helpers')
+const { getPackage, optionsDefinitions } = require('./helpers')
 
 const getLicense = (file) => {
   return licenses[file.toLowerCase()]
@@ -19,7 +21,8 @@ const createFile = (file, otherArgs) => {
     description : pkg.description
   })
 
-  fs.writeFile('LICENSE.md', template(data), (err) => {
+  const options = commandLineArgs(optionsDefinitions, otherArgs)
+  fs.writeFile(`LICENSE.${(options.type) ? options.type : 'md'}`, template(data), (err) => {
     if (err) throw err;
   });
 }

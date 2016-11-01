@@ -14,6 +14,7 @@
   ],
   "author": "Michael Fix",
   "dependencies": {
+    "command-line-args": "^3.0.2",
     "file-saver": "^1.3.3",
     "fs": "0.0.1-security",
     "handlebars": "^4.0.5",
@@ -40,7 +41,18 @@
     "webpack": "^1.13.2"
   },
   "license": "MIT",
-  "bin" : {
-    "oslo" : "oslo"
-  }
+  "bin": {
+    "oslo": "oslo"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfix22/oslo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mfix22/oslo/issues"
+  },
+  "homepage": "https://github.com/mfix22/oslo#readme"
 }
