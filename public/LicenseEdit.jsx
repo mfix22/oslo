@@ -4,12 +4,18 @@ import FileCreator from './FileCreator'
 import ContentEditable from './ContentEditable'
 
 const LicenseEdit = ({license}) => {
+  let text;
   return (
     <div className="file-area">
-      <pre>
-          {<ContentEditable text={license}/>}
+      <pre
+        ref={node => {
+          if (text) console.log(text.children[0]);
+          text = node
+        }}
+      >
+          {<ContentEditable text={license} />}
       </pre>
-      <FileCreator text={license}/>
+      <FileCreator editedText={text} text={license}/>
     </div>
   )
 }

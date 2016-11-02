@@ -18,13 +18,13 @@ const toggle_style = {
   display: 'inline-block'
 }
 
-let FileCreator = ({text, toggled, onToggle}) => {
+let FileCreator = ({text, toggled, onToggle, editedText, children}) => {
 
   const download = () => {
-    const blob = new Blob([text.text], {type: "text/plain;charset=utf-8"});
+    const blob = new Blob([document.getElementById('editedText').textContent], {type: "text/plain;charset=utf-8"});
     saveAs(blob, `LICENSE${(toggled) ? '.md' : '.txt'}`);
   }
-  
+
   if (text === '') {
     return (<div></div>)
   }
@@ -52,7 +52,6 @@ let FileCreator = ({text, toggled, onToggle}) => {
 
 const mapStateToProps = (state) => {
   return {
-    text : state.text,
     toggled: state.file_type_md,
   }
 }
